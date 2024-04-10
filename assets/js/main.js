@@ -115,9 +115,18 @@ const addAttendee = (event) => {
         dataCheckIn: null
     }
 
+    const attendeeVerify = attendees.find((a) => a.email == attendee.email)
+
+    if(attendeeVerify){
+        alert("E-mail já cadastrado!")
+        return
+    }
+
     attendees = [attendee, ...attendees]
     updateList(attendees)
 
+    event.target.querySelector('[name="nome"]').value = ""
+    event.target.querySelector('[name="email"]').value = ""
 }
 
 const updateCheckIn = (event) => {
