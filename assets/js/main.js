@@ -9,7 +9,7 @@ let attendees = [
         nome: "Mayk Brito",
         email: "maykbrito@gmail.com",
         dataInscricao: new Date(2024, 1, 2, 10, 23),
-        dataCheckIn: new Date(2024, 1, 5, 20, 20),
+        dataCheckIn: null,
     },
     {
         nome: "Ana Silva",
@@ -27,13 +27,13 @@ let attendees = [
         nome: "Maria Santos",
         email: "maria.santos@example.com",
         dataInscricao: new Date(2024, 2, 25, 13, 10),
-        dataCheckIn: new Date(2024, 2, 28, 10, 35),
+        dataCheckIn: null,
     },
     {
         nome: "Pedro Souza",
         email: "pedro.souza@example.com",
         dataInscricao: new Date(2024, 2, 28, 16, 55),
-        dataCheckIn: new Date(2024, 3, 2, 8, 40),
+        dataCheckIn: null,
     },
     {
         nome: "Carla Mendes",
@@ -121,9 +121,14 @@ const addAttendee = (event) => {
 }
 
 const updateCheckIn = (event) => {
+    const result = confirm("Tem certeza que deseja fazer o check-in?")
+    if(result == false){
+        return
+    }
     const attendee = attendees.find((a) => {
         return a.email == event.target.dataset.email
     })
     attendee.dataCheckIn = new Date()
+    
     updateList(attendees)
 }
