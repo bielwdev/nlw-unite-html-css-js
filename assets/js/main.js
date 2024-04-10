@@ -94,7 +94,7 @@ const createNewAttendee = (attendee) => {
 }
 
 const updateList = (attendees) => {
-    let output = "teste"
+    let output = ""
     for(let attendee of attendees){
         output = output + createNewAttendee(attendee)
     }
