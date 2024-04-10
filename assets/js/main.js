@@ -87,7 +87,11 @@ const createNewAttendee = (attendee) => {
 }
 
 const updateList = (attendees) => {
-    document.querySelector("tbody").innerHTML = createNewAttendee(attendees[2])
+    let output = "teste"
+    for(let attendee of attendees){
+        output = output + createNewAttendee(attendee)
+    }
+    document.querySelector("tbody").innerHTML = output
 }
 
 updateList(attendees)
