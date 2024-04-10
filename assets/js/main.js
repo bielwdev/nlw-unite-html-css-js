@@ -97,3 +97,20 @@ const updateList = (attendees) => {
 }
 
 updateList(attendees)
+
+const addAttendee = (event) => {
+    event.preventDefault()
+
+    const formData = new FormData(event.target)
+    
+    const attendee = {
+        nome: formData.get("nome"),
+        email: formData.get("email"),
+        dataInscricao: new Date(),
+        dataCheckIn: null
+    }
+
+    attendees = [attendee, ...attendees]
+    updateList(attendees)
+
+}
