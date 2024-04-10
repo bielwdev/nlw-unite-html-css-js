@@ -69,7 +69,12 @@ let attendees = [
 
 const createNewAttendee = (attendee) => {
     const dataInscricao = dayjs(Date.now()).to(attendee.dataInscricao)
-    const dataCheckIn = dayjs(Date.now()).to(attendee.dataCheckIn)
+    let dataCheckIn = dayjs(Date.now()).to(attendee.dataCheckIn)
+    if(attendee.dataCheckIn == null){
+        dataCheckIn = `
+        <button data-email="${attendee.email}" onclick="updateCheckIn(event)">Confirmar check-in</button>
+        `
+    }
     return `
     <tr>
         <td>
@@ -113,4 +118,12 @@ const addAttendee = (event) => {
     attendees = [attendee, ...attendees]
     updateList(attendees)
 
+}
+
+const updateCheckIn = (event) => {
+    const attendee = attendees.find((a) => {
+        return a.email == event.target.dataset.email
+    })
+    attendee.dataCheckIn = new Date()
+    updateList(attendees)
 }
