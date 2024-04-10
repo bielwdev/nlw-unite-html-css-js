@@ -68,6 +68,8 @@ let attendees = [
 ]
 
 const createNewAttendee = (attendee) => {
+    const dataInscricao = dayjs(Date.now()).to(attendee.dataInscricao)
+    const dataCheckIn = dayjs(Date.now()).to(attendee.dataCheckIn)
     return `
     <tr>
         <td>
@@ -79,8 +81,8 @@ const createNewAttendee = (attendee) => {
                 ${attendee.email}
             </small>
             </td>
-            <td>${attendee.dataInscricao}</td>
-            <td>${attendee.dataCheckIn}</td>
+            <td>${dataInscricao}</td>
+            <td>${dataCheckIn}</td>
         </tr>
     `
 
