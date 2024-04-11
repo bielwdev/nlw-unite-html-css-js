@@ -1,3 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --border: 1px solid #ffffff1a;
+}
+
 body, table, input, button{
     font-weight: 300;
     font-size: 16px;
@@ -7,6 +17,35 @@ body, table, input, button{
 body{
     background-color: #121214;
     color: #fff;
+}
+
+.container{
+    max-width: 690px;
+    margin: 0 auto;
+    padding: 20px 32px;
+}
+
+header{
+    padding: 20px 0px;
+}
+
+form{
+    border: var(--border);
+    border-inline: none;
+    padding: 20px 0;
+}
+
+fieldset {
+    border: none;
+}
+
+fieldset > div {
+    display: flex;
+    gap: 12px;
+}
+
+.input-wrapper{
+    flex: 1;
 }
 
 table{
@@ -23,7 +62,7 @@ thead th, tbody td{
 }
 
 tbody td{
-    border-top: 1px solid #ffffff1a;
+    border-top: var(--border);
     font-size: 13px;
     line-height: 15px;
     color: #c4c4cc;
@@ -48,5 +87,4 @@ tbody td button{
 
 tbody td button:hover{
     text-decoration: underline;
-    
 }
