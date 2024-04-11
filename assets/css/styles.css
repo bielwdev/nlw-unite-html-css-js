@@ -24,4 +24,29 @@ thead th, tbody td{
 
 tbody td{
     border-top: 1px solid #ffffff1a;
+    font-size: 13px;
+    line-height: 15px;
+    color: #c4c4cc;
+}
+
+tbody td strong{
+    color: #fff;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 600;
+}
+
+tbody td small{
+    font-size: 12px;
+    line-height: 16px;
+}
+
+tbody td button{
+    all: unset;
+    color: #9FF9CC;
+}
+
+tbody td button:hover{
+    text-decoration: underline;
+    
 }
