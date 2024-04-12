@@ -66,6 +66,12 @@ input{
     all: unset;
 }
 
+fieldset legend, section h2{
+    font: 700 16px/140% 'Roboto', sans-serif;
+    color: #E1E1E6;
+    padding-bottom: 16px;
+}
+
 fieldset button{
     width: fit-content;
     border: 0;
@@ -84,6 +90,16 @@ fieldset button{
 fieldset button:hover{
     background: #f37c37;
 }
+
+.attendees-list{
+    padding: 20px 0;
+}
+
+.attendees-list > div{
+    border: var(--border);
+    border-radius: 8px;
+}
+
 table{
     border-collapse: collapse;
 }
